@@ -25,7 +25,7 @@ public class DefaultReferenceBuilder implements ReferenceBuilder {
     return new Reference()
         .setReference(
             String.format(
-                "%s/%s", dnpmToFhirMapper.getFhirResourceType(), dnpmToFhirMapper.getId(item)));
+                "%s/%s", dnpmToFhirMapper.getFhirResourceType(), dnpmToFhirMapper.getFhirId(item)));
   }
 
   @Override

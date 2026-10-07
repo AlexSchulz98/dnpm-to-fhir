@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "0a3fc7fe46f97896842bb8b23434e4ccbe90051940d467fed9971fedd833108c",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt" ]

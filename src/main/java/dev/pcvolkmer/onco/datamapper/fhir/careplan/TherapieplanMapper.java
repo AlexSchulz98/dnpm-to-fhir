@@ -49,7 +49,8 @@ public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
   @Override
   public CarePlan map(MtbCarePlan sourceItem) {
     var result = new CarePlan();
-    result.addIdentifier().setSystem(this.getSystem()).setValue(sourceItem.getId());
+    result.setId(this.getFhirId(sourceItem));
+    result.addIdentifier(this.createIdentifier(sourceItem));
 
     result.setMeta(
         new Meta()

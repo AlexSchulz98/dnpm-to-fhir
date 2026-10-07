@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "371c9fbcf7c59d4205369bfe5b70cf62c6b71d200ba01a60109f956495eb1c3e",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-pdl1" ]

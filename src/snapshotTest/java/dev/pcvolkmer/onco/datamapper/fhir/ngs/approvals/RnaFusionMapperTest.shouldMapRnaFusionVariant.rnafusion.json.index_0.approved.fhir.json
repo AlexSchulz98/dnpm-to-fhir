@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "4cf09a612c7c3b70bb955d7ff16c90a49378d31181df90f05d197b49ab713743",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]

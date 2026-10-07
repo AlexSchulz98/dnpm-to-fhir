@@ -1,5 +1,6 @@
 {
   "resourceType": "MedicationRequest",
+  "id": "0dec5c3b65614f29466b00578db7ec3c7ed6e8d16fad509b96a1a3d3a0686231",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung" ]

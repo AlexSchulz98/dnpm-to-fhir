@@ -1,12 +1,13 @@
 {
   "resourceType": "CarePlan",
+  "id": "8484d223c812290867b98ad0fa2b4e890dc117922bffdcf1a7ea2ae734f1d47a",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan" ]
   },
   "identifier": [ {
     "system": "https://fhir.diz.uni-marburg.de/sid/careplan-id",
-    "value": "50c725cb-3c0c-4906-9a4e-3a3cb3964172"
+    "value": "50c725cb-3c0c-4906-9a4e-3a3cb3964172_careplan"
   } ],
   "status": "active",
   "intent": "plan",

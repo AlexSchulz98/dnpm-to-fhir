@@ -1,5 +1,6 @@
 {
   "resourceType": "ServiceRequest",
+  "id": "8d69b89cb67e2bcc73c94dd4414653353f2d074d6fd947e24b8e1f58ec1ca9ba",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag" ]

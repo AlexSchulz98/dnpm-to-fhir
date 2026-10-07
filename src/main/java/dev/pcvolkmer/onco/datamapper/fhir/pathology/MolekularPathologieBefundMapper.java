@@ -55,7 +55,8 @@ public class MolekularPathologieBefundMapper extends DiagnosticReportMapper<IhcR
   public DiagnosticReport map(IhcReport sourceItem) {
     var result = new DiagnosticReport();
 
-    result.addIdentifier().setSystem(this.getSystem()).setValue(this.getId(sourceItem));
+    result.setId(this.getFhirId(sourceItem));
+    result.addIdentifier(this.createIdentifier(sourceItem));
 
     result.setMeta(
         new Meta()

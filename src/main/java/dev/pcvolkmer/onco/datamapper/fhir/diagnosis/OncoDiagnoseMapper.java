@@ -48,7 +48,8 @@ public class OncoDiagnoseMapper extends ConditionMapper<MtbDiagnosis> {
   @Override
   public Condition map(MtbDiagnosis diagnose) {
     var condition = new Condition();
-    condition.addIdentifier().setSystem(this.getSystem()).setValue(diagnose.getId());
+    condition.setId(this.getFhirId(diagnose));
+    condition.addIdentifier(this.createIdentifier(diagnose));
 
     condition.setMeta(
         new Meta()

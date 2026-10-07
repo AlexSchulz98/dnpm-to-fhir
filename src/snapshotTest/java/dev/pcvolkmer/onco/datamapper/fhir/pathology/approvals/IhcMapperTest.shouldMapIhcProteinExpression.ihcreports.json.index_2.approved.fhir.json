@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "fe60703f2be7bdbdad5b8b24e787c69c45f6863a91984b3da377c36da2a1a289",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry-her2" ]

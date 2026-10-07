@@ -1,5 +1,6 @@
 {
   "resourceType": "ServiceRequest",
+  "id": "31d3c9de2bf2283a3ef0a1c0b562abcfa78cfe8f6e446389b235eadbb6396cfb",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage" ]

@@ -45,7 +45,8 @@ public class TmbMapper extends ObservationMapper<Tmb> {
   @Override
   public Observation map(Tmb sourceItem) {
     var result = new Observation();
-    result.addIdentifier().setSystem(this.getSystem()).setValue(this.getId(sourceItem));
+    result.setId(this.getFhirId(sourceItem));
+    result.addIdentifier(this.createIdentifier(sourceItem));
 
     result.setMeta(
         new Meta()

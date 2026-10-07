@@ -21,6 +21,7 @@ package dev.pcvolkmer.onco.datamapper.fhir;
 
 import dev.pcvolkmer.onco.datamapper.fhir.builders.ReferenceBuilder;
 import dev.pcvolkmer.onco.datamapper.fhir.filter.Filter;
+import io.github.dizuker.tofhir.IdUtils;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -29,6 +30,7 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.UUID;
 import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.Reference;
 import org.hl7.fhir.r4.model.Resource;
 import org.hl7.fhir.r4.model.Type;
@@ -97,5 +99,13 @@ public abstract class DnpmToFhirMapper<S, D extends Resource> implements Mapper<
 
   protected String getRequestUrl(S item) {
     return this.referenceBuilder.getReference(item, this).getReference();
+  }
+
+  protected Identifier createIdentifier(S item) {
+    return new Identifier().setSystem(this.getSystem()).setValue(this.getId(item));
+  }
+
+  public String getFhirId(S item) {
+    return IdUtils.fromIdentifier(this.createIdentifier(item)).getIdPart();
   }
 }

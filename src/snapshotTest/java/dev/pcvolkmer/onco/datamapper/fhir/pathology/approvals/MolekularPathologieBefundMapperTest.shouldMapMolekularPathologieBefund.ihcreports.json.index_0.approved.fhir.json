@@ -1,5 +1,6 @@
 {
   "resourceType": "DiagnosticReport",
+  "id": "23151ebebe1ec1d5f67b3f987a7c4b74c1d27f45bfbfc9c6890507ad86a14972",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report" ]

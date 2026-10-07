@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "b3bbef96ee0d17aad69f41a2ea8409eb1bf78d5cb74dbef4ac7a4a4ca144d8ea",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score" ]

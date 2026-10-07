@@ -5,6 +5,7 @@
     "fullUrl": "urn:uuid:af1ae64f-79b5-3d21-97ef-bbd40c9494d1",
     "resource": {
       "resourceType": "Condition",
+      "id": "932e4afd208a32f45f7a486dd4550913dfe6e6698f86d7c6d559e0ad78ebbfe7",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnose-primaertumor" ]
@@ -15,7 +16,7 @@
       } ],
       "identifier": [ {
         "system": "https://fhir.diz.uni-marburg.de/sid/condition-id",
-        "value": "8aa2be4a-14a6-4dd3-9fad-0bb1362c92c2"
+        "value": "8aa2be4a-14a6-4dd3-9fad-0bb1362c92c2_mtbdiagnose"
       } ],
       "code": {
         "coding": [ {
@@ -38,6 +39,7 @@
     "fullUrl": "urn:uuid:05129e74-599f-40dc-82b1-5c487a04a3b6",
     "resource": {
       "resourceType": "Condition",
+      "id": "8dd9272281a8090416ef0113a45f2810e07e25532b9bd8609c76b30a8bcce50e",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-onko-diagnose-primaertumor" ]
@@ -48,7 +50,7 @@
       } ],
       "identifier": [ {
         "system": "https://fhir.diz.uni-marburg.de/sid/condition-id",
-        "value": "8aa2be4a-14a6-4dd3-9fad-0bb1362c92c2"
+        "value": "8aa2be4a-14a6-4dd3-9fad-0bb1362c92c2_oncodiagnose"
       } ],
       "clinicalStatus": {
         "coding": [ {
@@ -270,13 +272,14 @@
     "fullUrl": "urn:uuid:4c0fa487-d0b7-8a86-39a6-b12d161f2eca",
     "resource": {
       "resourceType": "CarePlan",
+      "id": "8484d223c812290867b98ad0fa2b4e890dc117922bffdcf1a7ea2ae734f1d47a",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan" ]
       },
       "identifier": [ {
         "system": "https://fhir.diz.uni-marburg.de/sid/careplan-id",
-        "value": "50c725cb-3c0c-4906-9a4e-3a3cb3964172"
+        "value": "50c725cb-3c0c-4906-9a4e-3a3cb3964172_careplan"
       } ],
       "status": "active",
       "intent": "plan",
@@ -302,13 +305,14 @@
     "fullUrl": "urn:uuid:39bfcc6e-1d13-9407-c9a8-d75095514fc3",
     "resource": {
       "resourceType": "CarePlan",
+      "id": "95f975f7e2b94b118282073b8b3c97ba591361c0717d0961fff51b85ebe5d7ce",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieplan" ]
       },
       "identifier": [ {
         "system": "https://fhir.diz.uni-marburg.de/sid/careplan-id",
-        "value": "8b0d6e36-364f-40e5-8fca-b13f4bb9189a"
+        "value": "8b0d6e36-364f-40e5-8fca-b13f4bb9189a_careplan"
       } ],
       "status": "active",
       "intent": "plan",
@@ -351,6 +355,7 @@
     "fullUrl": "urn:uuid:518b49bf-40c7-cca4-929f-cf46e1b8fc66",
     "resource": {
       "resourceType": "ServiceRequest",
+      "id": "8d69b89cb67e2bcc73c94dd4414653353f2d074d6fd947e24b8e1f58ec1ca9ba",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-humangenetische-beratung-auftrag" ]
@@ -388,6 +393,7 @@
     "fullUrl": "urn:uuid:c56f6891-a697-f5c6-ecf2-c82962798911",
     "resource": {
       "resourceType": "MedicationRequest",
+      "id": "0dec5c3b65614f29466b00578db7ec3c7ed6e8d16fad509b96a1a3d3a0686231",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung" ]
@@ -433,6 +439,7 @@
     "fullUrl": "urn:uuid:c3306f9b-b708-3d7c-6a99-4e48c68df3de",
     "resource": {
       "resourceType": "MedicationRequest",
+      "id": "90c6b7420f1babc5f86df183031433da8e9af4d653c0ed5e685a87ae9e72532d",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-therapieempfehlung" ]
@@ -478,6 +485,7 @@
     "fullUrl": "urn:uuid:5faeb2ff-0875-b20d-7034-08a7e2b5a4b6",
     "resource": {
       "resourceType": "ServiceRequest",
+      "id": "31d3c9de2bf2283a3ef0a1c0b562abcfa78cfe8f6e446389b235eadbb6396cfb",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-studieneinschluss-anfrage" ]
@@ -515,6 +523,7 @@
     "fullUrl": "urn:uuid:1ce6e2d6-61df-047c-a3e2-74bef1836cfc",
     "resource": {
       "resourceType": "Observation",
+      "id": "0a3fc7fe46f97896842bb8b23434e4ccbe90051940d467fed9971fedd833108c",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-tumorzellgehalt" ]
@@ -592,6 +601,7 @@
     "fullUrl": "urn:uuid:d6beee9d-e9e6-ac14-3c7e-c40313b5e2c7",
     "resource": {
       "resourceType": "Observation",
+      "id": "2e1d0d940c47f30cd010ce8672734e81c10870c56820b61ee45d8c1352cd9f58",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -755,6 +765,7 @@
     "fullUrl": "urn:uuid:ef1e31a1-3137-ab8a-9cdd-b84808a0821e",
     "resource": {
       "resourceType": "Observation",
+      "id": "02673ff10aa268d6efa06ea30b8b6d1d929afb1eecf16d4525963c3ec8536f9b",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -918,6 +929,7 @@
     "fullUrl": "urn:uuid:3b99bad7-717f-83a7-70c4-9d7e841a573c",
     "resource": {
       "resourceType": "Observation",
+      "id": "636a274827f731035771e52f8f24fa56e5daed3d852b73c7629788c0cf1baa7a",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1081,6 +1093,7 @@
     "fullUrl": "urn:uuid:4c47da3a-7bda-2710-cb50-7f8aebfca3da",
     "resource": {
       "resourceType": "Observation",
+      "id": "8a0c9a26952bd66d6ef55810bd36722e499b915673e10537a43cf25a4a84e720",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1244,6 +1257,7 @@
     "fullUrl": "urn:uuid:0e025e02-1279-56de-ac65-99bde0bbfca4",
     "resource": {
       "resourceType": "Observation",
+      "id": "6a77c5baf87f0c5b7667aaba175f104dca075aef9f10135629d5048402a48a52",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1407,6 +1421,7 @@
     "fullUrl": "urn:uuid:d2453368-c6f4-a5e0-7d79-8d513f06bafc",
     "resource": {
       "resourceType": "Observation",
+      "id": "bd458b945fa105f66a2573190a57097b60e0ca8ba521ef8692c0d8080ebdb889",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1570,6 +1585,7 @@
     "fullUrl": "urn:uuid:9bece564-a6e4-abf6-f226-d3bed6a11f15",
     "resource": {
       "resourceType": "Observation",
+      "id": "ab2fb0cd9f525b6c5b200679e025d3ea8ea9328ba89d9e1f99ceb5c3530224b2",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1733,6 +1749,7 @@
     "fullUrl": "urn:uuid:4b5f904e-dcad-39a5-fde1-f7da998f046a",
     "resource": {
       "resourceType": "Observation",
+      "id": "3e237d40d30924b47da17facca41ddfbdaeaed303eb0f8daf756262d7a4de9da",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -1896,6 +1913,7 @@
     "fullUrl": "urn:uuid:ba4373ad-9699-5fc0-437f-f08ff98e6a6f",
     "resource": {
       "resourceType": "Observation",
+      "id": "598f9ecd9c521d6baa26d886afd59f79059de87a401056d7d7607f385da7d69d",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]
@@ -2059,6 +2077,7 @@
     "fullUrl": "urn:uuid:0e4bc59c-1d3b-9e68-6200-675b1af5f192",
     "resource": {
       "resourceType": "Observation",
+      "id": "c23bec63baca8ac419ce7d33906f9bedff75bf47167a4dd2ce36ade5d9f9e5aa",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2116,6 +2135,7 @@
     "fullUrl": "urn:uuid:c03e7cd2-7b57-40b5-4c83-171e4481b0a5",
     "resource": {
       "resourceType": "Observation",
+      "id": "b2843a9b69b92bd8dd5fd6e75e117e667775da6341bb550916567e5ba1ca59d3",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2173,6 +2193,7 @@
     "fullUrl": "urn:uuid:d4fd28ec-c427-4956-a1a6-70a00481e1a3",
     "resource": {
       "resourceType": "Observation",
+      "id": "6784c51be9cf78863fc714a3cbae04d759bd6ce57292e258a7507d367808bf30",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2230,6 +2251,7 @@
     "fullUrl": "urn:uuid:740b0dd8-e4e6-643f-cf89-fce64ea9b7ff",
     "resource": {
       "resourceType": "Observation",
+      "id": "9256665a000523225cd083cf4766d81feaef702f414c26e9596894c3447d8238",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2287,6 +2309,7 @@
     "fullUrl": "urn:uuid:246992bd-9219-838f-5038-fd01e09885f9",
     "resource": {
       "resourceType": "Observation",
+      "id": "74ca55eccd21ce1fb16e8080e268e98790c478504c16d913e2bcdd341b52cc90",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2344,6 +2367,7 @@
     "fullUrl": "urn:uuid:ce1e547b-f8b5-339a-afa0-83d1c3295f10",
     "resource": {
       "resourceType": "Observation",
+      "id": "b2802f2475400869b91f1a798a5c1c42de988e60be6f3b8ef588e453bc595c66",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2401,6 +2425,7 @@
     "fullUrl": "urn:uuid:69cb0cb4-7614-d7d4-e262-1dfa8386dd3d",
     "resource": {
       "resourceType": "Observation",
+      "id": "27a28c4c641e6e803e7c31c3d6808e121aa9bfa236ffeccbf7500c5aa27bbde1",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2458,6 +2483,7 @@
     "fullUrl": "urn:uuid:281b7bd6-0457-c523-5a63-3df8a52efb99",
     "resource": {
       "resourceType": "Observation",
+      "id": "08b0c8af88d7b0fbfa15a51db317011083cc8137eaa92a9fc40f11aabb3e6255",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2515,6 +2541,7 @@
     "fullUrl": "urn:uuid:62ddfe47-cec8-1a9f-0138-a082ac3065af",
     "resource": {
       "resourceType": "Observation",
+      "id": "9f773db2d131fcadd52888eb5a41ec527c4c68bc93127b6adc85eb90c95eb7a3",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-diagnostische-implikation" ]
@@ -2572,6 +2599,7 @@
     "fullUrl": "urn:uuid:308e5b3a-e158-1304-0a79-4cab48d1c399",
     "resource": {
       "resourceType": "Observation",
+      "id": "b3b5b6127f3646b592e9d5f7b18a2a9eb0aafc703e1c5288deb91419741fdc25",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -2866,6 +2894,7 @@
     "fullUrl": "urn:uuid:ce5520ab-67ee-aef8-c457-c57d17835a9c",
     "resource": {
       "resourceType": "Observation",
+      "id": "72f5fa63d34ce9264b86528ec53ca1397613c6b65521099764f5d88f3024ac32",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -3055,6 +3084,7 @@
     "fullUrl": "urn:uuid:e230de8d-6572-cfbf-ebb9-7199cc205ee9",
     "resource": {
       "resourceType": "Observation",
+      "id": "a9a6ce03f847bf96f339fa2ecc27a28b80a56165751d237ef48ac60be00cfe5f",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -3319,6 +3349,7 @@
     "fullUrl": "urn:uuid:548c2585-e2f0-1563-77a9-951a15e5fd9d",
     "resource": {
       "resourceType": "Observation",
+      "id": "243c8175d00218daadbfa2934764956098017a8b66a9b7d19dc372e8c49adeb4",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -3613,6 +3644,7 @@
     "fullUrl": "urn:uuid:939dca3b-ead2-ebe8-8909-826e6bd355a4",
     "resource": {
       "resourceType": "Observation",
+      "id": "a66f069df9842181ac3e389facabb138f71af9e97b776357fc380b8705c4f9fc",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -3952,6 +3984,7 @@
     "fullUrl": "urn:uuid:d4c43239-6a54-c094-ad0e-8405d0b2db8e",
     "resource": {
       "resourceType": "Observation",
+      "id": "a78093130367b4cab9104602555d8ba6a51f56f967d493425a144683b645c9c2",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -4231,6 +4264,7 @@
     "fullUrl": "urn:uuid:b546cd32-35bf-4849-6fc9-b15588b5a702",
     "resource": {
       "resourceType": "Observation",
+      "id": "4828ef1554d75f22f0e3af9775654ff7546c17e91c866275c90159d10fb9cd95",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -4420,6 +4454,7 @@
     "fullUrl": "urn:uuid:a99af153-22d3-606c-ac72-c4b9aace9860",
     "resource": {
       "resourceType": "Observation",
+      "id": "9c9d3fb22b83310c84840826b75fe156ce559634ff348c35b0297daf0c19bd83",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -4639,6 +4674,7 @@
     "fullUrl": "urn:uuid:80abb5f5-37d3-44e4-0a51-28c2b6c93d6e",
     "resource": {
       "resourceType": "Observation",
+      "id": "bece7f8ca5b367477d8c0436b157e824c78e6e62cae6af273f8a706dbf4dad91",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-copy-number-variant" ]
@@ -4888,6 +4924,7 @@
     "fullUrl": "urn:uuid:b367c408-4c25-d5c4-36bd-7aac270caef4",
     "resource": {
       "resourceType": "Observation",
+      "id": "28c458d00268ad89e59b6fc452deebea289ce4b44e7e1838aef00a136966f596",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5030,6 +5067,7 @@
     "fullUrl": "urn:uuid:0b883be7-5d7f-0cdc-c793-9e64b3bc54f3",
     "resource": {
       "resourceType": "Observation",
+      "id": "630d4be5ca96e3ff95c8d55a416f813b8bba0977471449515cda717f502781a2",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5170,6 +5208,7 @@
     "fullUrl": "urn:uuid:89ee9505-3077-5552-8269-90ae1a60496d",
     "resource": {
       "resourceType": "Observation",
+      "id": "e8d7a884f4b3eddfa23f169c980d25f79294f4ae2156593b2a7e5982bfdb44e6",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5312,6 +5351,7 @@
     "fullUrl": "urn:uuid:588b9bdf-6771-9959-c666-e6888d4f70da",
     "resource": {
       "resourceType": "Observation",
+      "id": "87e35d9548758c4ac60178ec617046b61ce8cecc39ddd77392402ee9b56d51eb",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5454,6 +5494,7 @@
     "fullUrl": "urn:uuid:d72641da-7ab6-c019-9266-428c1ea7f282",
     "resource": {
       "resourceType": "Observation",
+      "id": "433e54845431f5eb86614cd46045e6e205f70ab51b840246e62f33c03c2e4adb",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5596,6 +5637,7 @@
     "fullUrl": "urn:uuid:33aa9617-1a5c-9d63-d26d-7d6162a62076",
     "resource": {
       "resourceType": "Observation",
+      "id": "5988a8b98c88473ae422e9abf32bcd715e99c299c1241de7b884cb3d6e3f4cfe",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5738,6 +5780,7 @@
     "fullUrl": "urn:uuid:672e6270-6787-4ac4-8bfd-eaf14a394be1",
     "resource": {
       "resourceType": "Observation",
+      "id": "2662c4bfc5e62363f6d00806130d5b6ba74ba9e1766467a28ec0914a252de1a6",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-dna-fusion" ]
@@ -5880,6 +5923,7 @@
     "fullUrl": "urn:uuid:f5b60b3a-f115-5f77-1a8b-1d0417690093",
     "resource": {
       "resourceType": "Observation",
+      "id": "4cf09a612c7c3b70bb955d7ff16c90a49378d31181df90f05d197b49ab713743",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6010,6 +6054,7 @@
     "fullUrl": "urn:uuid:9876f203-a0e8-a6f1-9e54-7ab88cec4aad",
     "resource": {
       "resourceType": "Observation",
+      "id": "783034526df6f585b81f5c3b3d8dd453b0fd3fc92197f480efab0c7a61e94324",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6140,6 +6185,7 @@
     "fullUrl": "urn:uuid:87d4b0d0-2ec2-4492-67e9-e49d3d515b46",
     "resource": {
       "resourceType": "Observation",
+      "id": "f876493920f634e3ba9313944e8aeba122a05c11e5622e60ab122027bb763b91",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6270,6 +6316,7 @@
     "fullUrl": "urn:uuid:6349f978-683d-a8a7-99d0-f60f03ca48d0",
     "resource": {
       "resourceType": "Observation",
+      "id": "0a8f9468c2b58615b31079e5b1083100a4738446f5f34586354470d4613219d9",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6400,6 +6447,7 @@
     "fullUrl": "urn:uuid:352f79e2-ea86-5b98-4a71-8f8b666dc666",
     "resource": {
       "resourceType": "Observation",
+      "id": "6ce3ca93dd679e60987e5aed600e50a6372a04b37a4f7e86ee2d0f5fcec64226",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6530,6 +6578,7 @@
     "fullUrl": "urn:uuid:043cda1a-301f-59f9-aa97-eae926cc3133",
     "resource": {
       "resourceType": "Observation",
+      "id": "953bbe8323e7bb00c54b9ee512aa0c9aa6798a819588ac8f323db8030f3f8dc1",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6660,6 +6709,7 @@
     "fullUrl": "urn:uuid:47788f3b-7361-7fc0-4fc4-89d2423b853d",
     "resource": {
       "resourceType": "Observation",
+      "id": "5f327a731e6af992e567dde44991e5799e925420353e962d3868d7549eb71a5f",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6790,6 +6840,7 @@
     "fullUrl": "urn:uuid:eb682bca-b03d-b7cc-7858-9be2d810eb70",
     "resource": {
       "resourceType": "Observation",
+      "id": "0975c478df083074cbfd4a87525e48ae22478286dd11568c5bc06dca43fdd85d",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -6920,6 +6971,7 @@
     "fullUrl": "urn:uuid:f9818ed0-5ebf-ff22-0eca-8cb6a9a808f9",
     "resource": {
       "resourceType": "Observation",
+      "id": "6e3b09606d8a487c129003092275bd6e4f4d470fab3ef5dbe3cb3048cb42f3e9",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-rna-fusion" ]
@@ -7050,6 +7102,7 @@
     "fullUrl": "urn:uuid:dbdd1430-9b3a-fb23-a861-ca5a66f3c315",
     "resource": {
       "resourceType": "Observation",
+      "id": "b3bbef96ee0d17aad69f41a2ea8409eb1bf78d5cb74dbef4ac7a4a4ca144d8ea",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-hrd-score" ]
@@ -7126,6 +7179,7 @@
     "fullUrl": "urn:uuid:dd13ac21-91a6-2b49-753b-6f87adb429ce",
     "resource": {
       "resourceType": "Observation",
+      "id": "648003f8df883de7a8f1fe99d83e42114c317a37d55a982df0a99f061d8fef8e",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-brcaness" ]
@@ -7172,6 +7226,7 @@
     "fullUrl": "urn:uuid:b0539d7c-b722-5f85-54b0-722d501ff392",
     "resource": {
       "resourceType": "Observation",
+      "id": "702077ca8eacaa40f9ebe0b5523b16437e6d83719bfd400da0cc60a19b9b7fc1",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast" ]
@@ -7225,6 +7280,7 @@
     "fullUrl": "urn:uuid:2eab2ec6-a20c-d2de-c33f-9f2bf15d65ed",
     "resource": {
       "resourceType": "Observation",
+      "id": "64dd1bd377f534b6c8cb1e473cf9093e7a8c428bbc4ee979d6663df516c1658e",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mikrosatelliteninstabilitaet" ]
@@ -7277,6 +7333,7 @@
     "fullUrl": "urn:uuid:c586bda7-2462-026a-06e7-ac95a32b2e66",
     "resource": {
       "resourceType": "Observation",
+      "id": "443bdaeb35a1895301f09cef87d65cfcc09bc4b3ec43d914ac454e1606c9603b",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7340,6 +7397,7 @@
     "fullUrl": "urn:uuid:d77d9d73-1e56-1987-a00d-f5c6873f29fe",
     "resource": {
       "resourceType": "Observation",
+      "id": "371c9fbcf7c59d4205369bfe5b70cf62c6b71d200ba01a60109f956495eb1c3e",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7403,6 +7461,7 @@
     "fullUrl": "urn:uuid:3094d04b-9329-447c-88ca-d8c0f8b622b7",
     "resource": {
       "resourceType": "Observation",
+      "id": "ce776e0bae64ce4883af3bd55ec2666bc5651681aea9abffd55f5e86d1cb3972",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7466,6 +7525,7 @@
     "fullUrl": "urn:uuid:022232f9-b796-fb6d-c436-451952530097",
     "resource": {
       "resourceType": "Observation",
+      "id": "667bcf78872761ffecebb9d68c47283f74bdbfc14211aa8da274f755f64008fa",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7529,6 +7589,7 @@
     "fullUrl": "urn:uuid:4d2db3a8-75c9-26a3-eb77-fc9899660d67",
     "resource": {
       "resourceType": "Observation",
+      "id": "270fae86d80c96850c1c7c526d8243f761d238b3222ddf4d45276f8020197fc6",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7592,6 +7653,7 @@
     "fullUrl": "urn:uuid:7d7c0895-48a2-8794-ad76-71187aada29c",
     "resource": {
       "resourceType": "Observation",
+      "id": "834641d1c7d907af7d18318b50a8f6a9f26511132b785762fc95a86821d6f29c",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7655,6 +7717,7 @@
     "fullUrl": "urn:uuid:bfed8fd0-9e5d-4ea1-37ab-c827e056c76f",
     "resource": {
       "resourceType": "Observation",
+      "id": "014a8e9cfc91b8220728d542e5fa99f5244bec3c8cdb6d00909d0b8df59604c4",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7718,6 +7781,7 @@
     "fullUrl": "urn:uuid:77c05af4-ff1b-adac-2e2c-52e35ae79a71",
     "resource": {
       "resourceType": "Observation",
+      "id": "fe60703f2be7bdbdad5b8b24e787c69c45f6863a91984b3da377c36da2a1a289",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-immunohistochemistry" ]
@@ -7781,6 +7845,7 @@
     "fullUrl": "urn:uuid:c5ddd7e0-1103-9636-e97f-f7e9c84c851d",
     "resource": {
       "resourceType": "DiagnosticReport",
+      "id": "23151ebebe1ec1d5f67b3f987a7c4b74c1d27f45bfbfc9c6890507ad86a14972",
       "meta": {
         "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
         "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-molecular-pathology-report" ]

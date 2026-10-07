@@ -50,7 +50,8 @@ public class TherapieempfehlungMapper extends MedicationRequestMapper<MtbMedicat
   @Override
   public MedicationRequest map(MtbMedicationRecommendation sourceItem) {
     var result = new MedicationRequest();
-    result.addIdentifier().setSystem(this.getSystem()).setValue(this.getId(sourceItem));
+    result.setId(this.getFhirId(sourceItem));
+    result.addIdentifier(this.createIdentifier(sourceItem));
 
     result.setMeta(
         new Meta()

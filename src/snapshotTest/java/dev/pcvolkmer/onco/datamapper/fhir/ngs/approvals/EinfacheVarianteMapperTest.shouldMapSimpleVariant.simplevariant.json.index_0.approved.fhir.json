@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "2e1d0d940c47f30cd010ce8672734e81c10870c56820b61ee45d8c1352cd9f58",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-einfache-variante" ]

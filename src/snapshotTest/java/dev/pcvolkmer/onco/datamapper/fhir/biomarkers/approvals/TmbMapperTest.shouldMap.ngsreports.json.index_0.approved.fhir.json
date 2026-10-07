@@ -1,5 +1,6 @@
 {
   "resourceType": "Observation",
+  "id": "702077ca8eacaa40f9ebe0b5523b16437e6d83719bfd400da0cc60a19b9b7fc1",
   "meta": {
     "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
     "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-mutationslast" ]
