@@ -36,8 +36,9 @@ public class MolekularPathologieBefundMapper extends DiagnosticReportMapper<IhcR
   public MolekularPathologieBefundMapper(
       ReferenceBuilder referenceBuilder,
       IhcMapper ihcMapper,
-      List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
     this.ihcMapper = Objects.requireNonNull(ihcMapper);
   }
 
@@ -91,6 +92,7 @@ public class MolekularPathologieBefundMapper extends DiagnosticReportMapper<IhcR
 
   private Reference getSpecimenReference(IhcReport sourceItem) {
     return this.referenceBuilder.getReference(
-        sourceItem.getSpecimen().getId(), new SpecimenMapper(this.referenceBuilder, filters));
+        sourceItem.getSpecimen().getId(),
+        new SpecimenMapper(this.referenceBuilder, filters, this.fhirSystemBaseUrl));
   }
 }

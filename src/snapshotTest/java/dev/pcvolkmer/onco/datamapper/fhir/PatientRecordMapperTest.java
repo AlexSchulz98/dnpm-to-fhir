@@ -35,7 +35,10 @@ class PatientRecordMapperTest {
         Objects.requireNonNull(
             this.getClass().getClassLoader().getResourceAsStream("mv64e-mtb-fake-patient.json"));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
-    var fhir = PatientRecordMapper.customInstance(new DizUniMrReferenceBuilder()).mapToBundle(mtb);
+    var fhir =
+        PatientRecordMapper.customInstance(
+                new DizUniMrReferenceBuilder(), "https://fhir.diz.uni-marburg.de")
+            .mapToBundle(mtb);
     verify(fhir, "mv64e-mtb-fake-patient.json");
   }
 
@@ -45,7 +48,8 @@ class PatientRecordMapperTest {
         Objects.requireNonNull(
             this.getClass().getClassLoader().getResourceAsStream("mv64e-mtb-fake-patient.json"));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
-    var fhir = PatientRecordMapper.defaultInstance().mapToBundle(mtb);
+    var fhir =
+        PatientRecordMapper.defaultInstance("https://fhir.diz.uni-marburg.de").mapToBundle(mtb);
     verify(fhir, "mv64e-mtb-fake-patient.json");
   }
 }

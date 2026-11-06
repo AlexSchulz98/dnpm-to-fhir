@@ -27,7 +27,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-import java.util.TimeZone;
+import java.util.Objects;
 import java.util.UUID;
 import org.hl7.fhir.r4.model.Bundle;
 import org.hl7.fhir.r4.model.Identifier;
@@ -39,19 +39,26 @@ public abstract class DnpmToFhirMapper<S, D extends Resource> implements Mapper<
 
   private final MessageDigest md5Digest;
 
-  protected String fhirSystemBaseUrl = "https://fhir.diz.uni-marburg.de";
-
-  protected String fhirMetaSource = String.format("%s/data-source/dnpm", this.fhirSystemBaseUrl);
+  protected final String fhirSystemBaseUrl;
+  protected final String fhirMetaSource;
 
   protected ReferenceBuilder referenceBuilder;
   protected List<Filter<? extends Type>> filters;
 
   protected DnpmToFhirMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
 
-    this.referenceBuilder = referenceBuilder;
-    this.filters = filters;
+    this.referenceBuilder = Objects.requireNonNull(referenceBuilder);
+    this.filters = Objects.requireNonNull(filters);
+
+    if (fhirSystemBaseUrl.isBlank()) {
+      throw new IllegalArgumentException("fhirSystemBaseUrl not set");
+    }
+    this.fhirSystemBaseUrl = fhirSystemBaseUrl;
+    this.fhirMetaSource = this.fhirSystemBaseUrl + "/data-source/dnpm";
+
     try {
       md5Digest = MessageDigest.getInstance("MD5");
     } catch (NoSuchAlgorithmException e) {

@@ -38,7 +38,9 @@ class TherapieempfehlungMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new TherapieempfehlungMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new TherapieempfehlungMapper(
+            new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir =
         mtb.getCarePlans().stream()

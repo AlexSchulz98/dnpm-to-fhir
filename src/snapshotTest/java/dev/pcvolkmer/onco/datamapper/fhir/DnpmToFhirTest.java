@@ -28,6 +28,8 @@ import org.hl7.fhir.instance.model.api.IBaseResource;
 
 public abstract class DnpmToFhirTest {
 
+  protected static final String FHIR_SYSTEM_BASE_URL = "https://fhir.diz.uni-marburg.de";
+
   /**
    * Verifies given Fhir resource matches approved source file
    *

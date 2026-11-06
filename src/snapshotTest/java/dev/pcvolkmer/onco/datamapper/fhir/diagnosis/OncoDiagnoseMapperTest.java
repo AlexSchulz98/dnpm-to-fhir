@@ -38,7 +38,9 @@ class OncoDiagnoseMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var diagnoseMapper = new OncoDiagnoseMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var diagnoseMapper =
+        new OncoDiagnoseMapper(
+            new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir = mtb.getDiagnoses().stream().map(diagnoseMapper::map).collect(Collectors.toList());
 

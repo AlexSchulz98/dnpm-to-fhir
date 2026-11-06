@@ -32,8 +32,10 @@ import org.hl7.fhir.r4.model.Type;
 public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
 
   public TherapieplanMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override
@@ -87,7 +89,9 @@ public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
               .setReference(
                   this.referenceBuilder
                       .getReference(
-                          reasonId, new MtbDiagnoseMapper(this.referenceBuilder, this.filters))
+                          reasonId,
+                          new MtbDiagnoseMapper(
+                              this.referenceBuilder, this.filters, this.fhirSystemBaseUrl))
                       .getReference()));
     }
 
@@ -99,7 +103,8 @@ public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
               result.addActivity(
                   new CarePlan.CarePlanActivityComponent()
                       .setReference(
-                          new TherapieempfehlungMapper(this.referenceBuilder, filters)
+                          new TherapieempfehlungMapper(
+                                  this.referenceBuilder, filters, this.fhirSystemBaseUrl)
                               .getReference(item))));
     }
 
@@ -108,7 +113,8 @@ public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
       result.addActivity(
           new CarePlan.CarePlanActivityComponent()
               .setReference(
-                  new HumangenetischeBeratungMapper(this.referenceBuilder, filters)
+                  new HumangenetischeBeratungMapper(
+                          this.referenceBuilder, filters, this.fhirSystemBaseUrl)
                       .getReference(geneticCounselingRecommendation)));
     }
 
@@ -119,7 +125,8 @@ public class TherapieplanMapper extends CarePlanMapper<MtbCarePlan> {
               result.addActivity(
                   new CarePlan.CarePlanActivityComponent()
                       .setReference(
-                          new StudieneinschlussMapper(this.referenceBuilder, filters)
+                          new StudieneinschlussMapper(
+                                  this.referenceBuilder, filters, this.fhirSystemBaseUrl)
                               .getReference(item))));
     }
 

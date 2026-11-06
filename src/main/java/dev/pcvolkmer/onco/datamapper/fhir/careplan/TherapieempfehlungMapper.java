@@ -33,8 +33,10 @@ import org.hl7.fhir.r4.model.Type;
 public class TherapieempfehlungMapper extends MedicationRequestMapper<MtbMedicationRecommendation> {
 
   public TherapieempfehlungMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override
@@ -108,7 +110,8 @@ public class TherapieempfehlungMapper extends MedicationRequestMapper<MtbMedicat
                   this.referenceBuilder
                       .getReference(
                           reason.getId() + "_mtbdiagnose",
-                          new MtbDiagnoseMapper(this.referenceBuilder, this.filters))
+                          new MtbDiagnoseMapper(
+                              this.referenceBuilder, this.filters, this.fhirSystemBaseUrl))
                       .getReference());
       result.addReasonReference(reasonReference);
     }

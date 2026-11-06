@@ -32,8 +32,10 @@ public class HumangenetischeBeratungMapper
     extends ServiceRequestMapper<GeneticCounselingRecommendation> {
 
   public HumangenetischeBeratungMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

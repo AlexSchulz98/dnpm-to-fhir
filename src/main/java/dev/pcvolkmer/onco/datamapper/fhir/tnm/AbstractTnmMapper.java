@@ -39,8 +39,10 @@ import org.jspecify.annotations.Nullable;
 public abstract class AbstractTnmMapper extends ObservationMapper<TumorStaging>
     implements ManyMapper<MtbDiagnosis, Observation> {
   protected AbstractTnmMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

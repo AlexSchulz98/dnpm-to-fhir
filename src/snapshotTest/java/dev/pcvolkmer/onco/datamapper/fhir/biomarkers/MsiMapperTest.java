@@ -43,7 +43,8 @@ class MsiMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new MsiMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new MsiMapper(new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir = mtb.getMsiFindings().stream().map(mapper::map).collect(Collectors.toList());
 
@@ -57,7 +58,8 @@ class MsiMapperTest extends DnpmToFhirTest {
             this.getClass().getClassLoader().getResourceAsStream("msifindings-mmr.json"));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new MsiMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new MsiMapper(new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     final var ex =
         assertThrows(

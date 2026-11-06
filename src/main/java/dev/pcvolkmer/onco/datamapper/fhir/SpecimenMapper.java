@@ -29,8 +29,11 @@ import org.jspecify.annotations.Nullable;
 
 public class SpecimenMapper extends DnpmToFhirMapper<TumorSpecimen, Specimen> {
 
-  public SpecimenMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public SpecimenMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

@@ -36,8 +36,10 @@ import org.hl7.fhir.r4.model.Type;
 public class TumorausbreitungMapper extends ObservationMapper<TumorStaging>
     implements ManyMapper<MtbDiagnosis, Observation> {
   public TumorausbreitungMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

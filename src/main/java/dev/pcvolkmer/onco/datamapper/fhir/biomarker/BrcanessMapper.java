@@ -28,8 +28,11 @@ import org.hl7.fhir.r4.model.*;
 import org.hl7.fhir.r4.model.Type;
 
 public class BrcanessMapper extends ObservationMapper<Brcaness> {
-  public BrcanessMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public BrcanessMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

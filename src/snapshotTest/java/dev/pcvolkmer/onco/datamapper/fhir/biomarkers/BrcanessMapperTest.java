@@ -34,6 +34,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class BrcanessMapperTest extends DnpmToFhirTest {
 
+  private static final String FHIR_SYSTEM_BASE_URL = "https://fhir.diz.uni-marburg.de";
+
   @ParameterizedTest
   @ValueSource(strings = {"ngsreports.json"})
   void shouldMap(String filename) throws IOException {
@@ -41,7 +43,8 @@ class BrcanessMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new BrcanessMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new BrcanessMapper(new DizUniMrReferenceBuilder(), List.of(), FHIR_SYSTEM_BASE_URL);
 
     var fhir =
         mtb.getNgsReports().stream()

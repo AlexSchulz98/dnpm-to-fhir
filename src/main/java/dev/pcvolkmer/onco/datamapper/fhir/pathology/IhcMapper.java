@@ -35,8 +35,11 @@ import org.hl7.fhir.r4.model.Type;
 public class IhcMapper extends ObservationMapper<ProteinExpression>
     implements ManyMapper<IhcReport, Observation> {
 
-  public IhcMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public IhcMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

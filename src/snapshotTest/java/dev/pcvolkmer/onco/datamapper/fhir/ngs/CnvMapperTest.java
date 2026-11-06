@@ -38,7 +38,8 @@ class CnvMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new CnvMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new CnvMapper(new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir =
         mtb.getNgsReports().get(0).getResults().getCopyNumberVariants().stream()

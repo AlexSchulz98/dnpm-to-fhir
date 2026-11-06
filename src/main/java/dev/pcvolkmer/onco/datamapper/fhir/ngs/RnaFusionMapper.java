@@ -27,8 +27,11 @@ import org.hl7.fhir.r4.model.*;
 import org.hl7.fhir.r4.model.Type;
 
 public class RnaFusionMapper extends AbstractNgsMapper<RnaFusion> {
-  public RnaFusionMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public RnaFusionMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

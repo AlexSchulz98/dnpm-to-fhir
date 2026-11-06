@@ -60,7 +60,10 @@ class TherapieempfehlungMapperUnitTest {
             .build();
 
     final var mapper =
-        new TherapieempfehlungMapper(new DefaultReferenceBuilder(), List.of(new AtcCodeFilter()));
+        new TherapieempfehlungMapper(
+            new DefaultReferenceBuilder(),
+            List.of(new AtcCodeFilter()),
+            "https://fhir.diz.uni-marburg.de");
 
     final var actual = mapper.map(source);
 

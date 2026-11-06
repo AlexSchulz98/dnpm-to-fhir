@@ -40,7 +40,9 @@ class TnmNMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new TnmNMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new TnmNMapper(
+            new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir =
         mtb.getDiagnoses().stream()
@@ -58,7 +60,9 @@ class TnmNMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new TnmNMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new TnmNMapper(
+            new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir = new Bundle();
     mtb.getDiagnoses().forEach(dia -> mapper.addManyToBundle(fhir, dia));

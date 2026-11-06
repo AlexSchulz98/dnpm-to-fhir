@@ -29,8 +29,11 @@ import org.hl7.fhir.r4.model.*;
 import org.hl7.fhir.r4.model.Type;
 
 public class EcogMapper extends ObservationMapper<PerformanceStatus> {
-  public EcogMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public EcogMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

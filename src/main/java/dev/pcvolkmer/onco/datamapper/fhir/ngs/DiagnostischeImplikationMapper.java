@@ -15,8 +15,9 @@ public class DiagnostischeImplikationMapper extends AbstractNgsMapper<Snv> {
   public DiagnostischeImplikationMapper(
       ReferenceBuilder referenceBuilder,
       EinfacheVarianteMapper einfacheVarianteMapper,
-      List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
     this.einfacheVarianteMapper =
         Objects.requireNonNull(einfacheVarianteMapper, "EinfacheVarianteMapper must not be null");
   }

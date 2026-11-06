@@ -27,8 +27,11 @@ import org.hl7.fhir.r4.model.*;
 import org.hl7.fhir.r4.model.Type;
 
 public class DnaFusionMapper extends AbstractNgsMapper<DnaFusion> {
-  public DnaFusionMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public DnaFusionMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

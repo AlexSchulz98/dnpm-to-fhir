@@ -36,8 +36,11 @@ import org.jspecify.annotations.Nullable;
 
 public class WhoGradZnsMapper extends ObservationMapper<TumorGrading>
     implements ManyMapper<MtbDiagnosis, Observation> {
-  public WhoGradZnsMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public WhoGradZnsMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

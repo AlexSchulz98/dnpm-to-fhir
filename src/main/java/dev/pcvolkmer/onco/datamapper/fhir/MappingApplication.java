@@ -60,6 +60,14 @@ public class MappingApplication {
         return;
       }
 
+      final var fhirSystemBaseUrl = parsedCliArgs.getOptionValue("fhir-system-base-url");
+
+      if (fhirSystemBaseUrl == null || fhirSystemBaseUrl.isBlank()) {
+        System.err.println(
+            "Keine FHIR-System-Base-URL angegeben. Verwende --fhir-system-base-url <url>");
+        return;
+      }
+
       var fis = new FileInputStream(inputFile);
       var dnpmJson = IOUtils.toString(fis, StandardCharsets.UTF_8);
       var dnpmData = Converter.fromJsonString(dnpmJson);
@@ -69,7 +77,9 @@ public class MappingApplication {
         filters.add(new AtcCodeFilter());
       }
 
-      var mapper = PatientRecordMapper.customInstance(new DefaultReferenceBuilder(), filters);
+      var mapper =
+          PatientRecordMapper.customInstance(
+              new DefaultReferenceBuilder(), filters, fhirSystemBaseUrl);
       var fhirJson =
           FhirContext.forR4().newJsonParser().encodeToString(mapper.mapToBundle(dnpmData));
 
@@ -91,6 +101,13 @@ public class MappingApplication {
         Option.builder()
             .longOpt("filter-atc")
             .desc("Nur Wirkstoffe mit ATC-Code-System mappen")
+            .get());
+    options.addOption(
+        Option.builder()
+            .longOpt("fhir-system-base-url")
+            .hasArg()
+            .argName("url")
+            .desc("Base-URL für FHIR-Identifier und Meta.source")
             .get());
     options.addOption(Option.builder().longOpt("filename").hasArg().desc("Datei").get());
     return options;

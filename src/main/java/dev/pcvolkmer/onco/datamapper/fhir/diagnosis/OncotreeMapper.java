@@ -46,8 +46,11 @@ public class OncotreeMapper extends ObservationMapper<MtbDiagnosis>
   private static final String MAPPING_FILE = "ontology_mappings.txt";
   private final List<OncotreeOntologyMapping> oncotreeOntologyMappings;
 
-  public OncotreeMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public OncotreeMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
     this.oncotreeOntologyMappings = loadOncotreeOntologyMappings();
   }
 

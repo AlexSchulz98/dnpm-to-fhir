@@ -39,7 +39,9 @@ class OncotreeMapperTest extends DnpmToFhirTest {
         Objects.requireNonNull(this.getClass().getClassLoader().getResourceAsStream(filename));
     var mtb = Converter.fromJsonString(new String(inputStream.readAllBytes()));
 
-    final var mapper = new OncotreeMapper(new DizUniMrReferenceBuilder(), List.of());
+    final var mapper =
+        new OncotreeMapper(
+            new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de");
 
     var fhir = new Bundle();
     mapper.addManyToBundle(fhir, mtb);

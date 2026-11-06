@@ -28,8 +28,10 @@ import org.hl7.fhir.r4.model.Type;
 public abstract class ServiceRequestMapper<S> extends DnpmToFhirMapper<S, ServiceRequest> {
 
   public ServiceRequestMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

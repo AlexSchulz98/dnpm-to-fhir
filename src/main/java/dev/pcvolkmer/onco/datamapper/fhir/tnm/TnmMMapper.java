@@ -27,8 +27,11 @@ import org.hl7.fhir.r4.model.Coding;
 import org.hl7.fhir.r4.model.Type;
 
 public class TnmMMapper extends AbstractTnmMapper {
-  public TnmMMapper(ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+  public TnmMMapper(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

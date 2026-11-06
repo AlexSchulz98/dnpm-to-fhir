@@ -42,8 +42,10 @@ class DiagnostischeImplikationMapperTest extends DnpmToFhirTest {
     var mapper =
         new DiagnostischeImplikationMapper(
             new DizUniMrReferenceBuilder(),
-            new EinfacheVarianteMapper(new DizUniMrReferenceBuilder(), List.of()),
-            List.of());
+            new EinfacheVarianteMapper(
+                new DizUniMrReferenceBuilder(), List.of(), "https://fhir.diz.uni-marburg.de"),
+            List.of(),
+            "https://fhir.diz.uni-marburg.de");
 
     var fhir =
         mtb.getNgsReports().get(0).getResults().getSimpleVariants().stream()

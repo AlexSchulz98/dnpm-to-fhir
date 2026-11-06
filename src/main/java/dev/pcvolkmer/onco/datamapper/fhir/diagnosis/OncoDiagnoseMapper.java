@@ -31,8 +31,10 @@ import org.hl7.fhir.r4.model.Type;
 public class OncoDiagnoseMapper extends ConditionMapper<MtbDiagnosis> {
 
   public OncoDiagnoseMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

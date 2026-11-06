@@ -50,6 +50,7 @@ public class PatientRecordMapper {
 
   private static final Logger LOG = LoggerFactory.getLogger(PatientRecordMapper.class);
 
+  private final String fhirSystemBaseUrl;
   private final Bundle.BundleType bundleType;
   private final ReferenceBuilder referenceBuilder;
   private final List<Filter<? extends Type>> filters;
@@ -57,23 +58,29 @@ public class PatientRecordMapper {
   private PatientRecordMapper(
       Bundle.BundleType bundleType,
       ReferenceBuilder referenceBuilder,
-      List<Filter<? extends Type>> filters) {
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
     this.bundleType = bundleType;
     this.referenceBuilder = referenceBuilder;
     this.filters = filters;
+    this.fhirSystemBaseUrl = fhirSystemBaseUrl;
   }
 
-  public static PatientRecordMapper defaultInstance() {
-    return customInstance(new DefaultReferenceBuilder(), List.of());
-  }
-
-  public static PatientRecordMapper customInstance(ReferenceBuilder referenceBuilder) {
-    return customInstance(referenceBuilder, List.of());
+  public static PatientRecordMapper defaultInstance(String fhirSystemBaseUrl) {
+    return customInstance(new DefaultReferenceBuilder(), List.of(), fhirSystemBaseUrl);
   }
 
   public static PatientRecordMapper customInstance(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    return new PatientRecordMapper(Bundle.BundleType.TRANSACTION, referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder, String fhirSystemBaseUrl) {
+    return customInstance(referenceBuilder, List.of(), fhirSystemBaseUrl);
+  }
+
+  public static PatientRecordMapper customInstance(
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    return new PatientRecordMapper(
+        Bundle.BundleType.TRANSACTION, referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   public Bundle mapToBundle(PatientRecord patientRecord) {
@@ -83,44 +90,50 @@ public class PatientRecordMapper {
 
     final var diagnoses = patientRecord.getDiagnoses();
     if (null != diagnoses) {
-      final var mtbDiagnoseMapper = new MtbDiagnoseMapper(referenceBuilder, filters);
+      final var mtbDiagnoseMapper =
+          new MtbDiagnoseMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> mtbDiagnoseMapper.addToBundle(bundle, item));
 
-      final var oncoDiagnoseMapper = new OncoDiagnoseMapper(referenceBuilder, filters);
+      final var oncoDiagnoseMapper =
+          new OncoDiagnoseMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> oncoDiagnoseMapper.addToBundle(bundle, item));
 
-      final var tumorausbreitungMapper = new TumorausbreitungMapper(referenceBuilder, filters);
+      final var tumorausbreitungMapper =
+          new TumorausbreitungMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> tumorausbreitungMapper.addManyToBundle(bundle, item));
 
-      final var tnmtMapper = new TnmTMapper(referenceBuilder, filters);
+      final var tnmtMapper = new TnmTMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> tnmtMapper.addManyToBundle(bundle, item));
 
-      final var tnmnMapper = new TnmNMapper(referenceBuilder, filters);
+      final var tnmnMapper = new TnmNMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> tnmnMapper.addManyToBundle(bundle, item));
 
-      final var tnmmMapper = new TnmMMapper(referenceBuilder, filters);
+      final var tnmmMapper = new TnmMMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       diagnoses.forEach(item -> tnmmMapper.addManyToBundle(bundle, item));
     }
 
     final var carePlans = patientRecord.getCarePlans();
     if (null != carePlans) {
-      final var therapieplanMapper = new TherapieplanMapper(referenceBuilder, filters);
+      final var therapieplanMapper =
+          new TherapieplanMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       carePlans.forEach(item -> therapieplanMapper.addToBundle(bundle, item));
 
       final var humangenetischeBeratungMapper =
-          new HumangenetischeBeratungMapper(referenceBuilder, filters);
+          new HumangenetischeBeratungMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       carePlans.stream()
           .map(MtbCarePlan::getGeneticCounselingRecommendation)
           .filter(Objects::nonNull)
           .forEach(item -> humangenetischeBeratungMapper.addToBundle(bundle, item));
 
-      final var therapieempfehlungMapper = new TherapieempfehlungMapper(referenceBuilder, filters);
+      final var therapieempfehlungMapper =
+          new TherapieempfehlungMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       carePlans.stream()
           .filter(item -> item.getMedicationRecommendations() != null)
           .flatMap(item -> item.getMedicationRecommendations().stream())
           .forEach(item -> therapieempfehlungMapper.addToBundle(bundle, item));
 
-      final var studieneinschlussMapper = new StudieneinschlussMapper(referenceBuilder, filters);
+      final var studieneinschlussMapper =
+          new StudieneinschlussMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       carePlans.stream()
           .filter(item -> item.getStudyEnrollmentRecommendations() != null)
           .flatMap(item -> item.getStudyEnrollmentRecommendations().stream())
@@ -129,69 +142,72 @@ public class PatientRecordMapper {
 
     final var histologieReports = patientRecord.getHistologyReports();
     if (null != histologieReports) {
-      final var tumorzellgehaltMapper = new TumorzellgehaltMapper(referenceBuilder, filters);
+      final var tumorzellgehaltMapper =
+          new TumorzellgehaltMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       histologieReports.forEach(item -> tumorzellgehaltMapper.addToBundle(bundle, item));
     }
 
     if (null != histologieReports && null != diagnoses) {
-      final var oncotreeMapper = new OncotreeMapper(referenceBuilder, filters);
+      final var oncotreeMapper = new OncotreeMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       oncotreeMapper.addManyToBundle(bundle, patientRecord);
     }
 
     final var performanceStatus = patientRecord.getPerformanceStatus();
     if (null != performanceStatus) {
-      final var ecogMapper = new EcogMapper(referenceBuilder, filters);
+      final var ecogMapper = new EcogMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       performanceStatus.forEach(item -> ecogMapper.addToBundle(bundle, item));
     }
 
     final var ngsReports = patientRecord.getNgsReports();
     if (null != ngsReports) {
 
-      final var einfacheVarianteMapper = new EinfacheVarianteMapper(referenceBuilder, filters);
+      final var einfacheVarianteMapper =
+          new EinfacheVarianteMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getSimpleVariants() != null)
           .flatMap(item -> item.getResults().getSimpleVariants().stream())
           .forEach(item -> einfacheVarianteMapper.addToBundle(bundle, item));
 
       final var diagnostischeImplikationMapper =
-          new DiagnostischeImplikationMapper(referenceBuilder, einfacheVarianteMapper, filters);
+          new DiagnostischeImplikationMapper(
+              referenceBuilder, einfacheVarianteMapper, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getSimpleVariants() != null)
           .flatMap(item -> item.getResults().getSimpleVariants().stream())
           .filter(diagnostischeImplikationMapper::supports)
           .forEach(item -> diagnostischeImplikationMapper.addToBundle(bundle, item));
 
-      final var cnvMapper = new CnvMapper(referenceBuilder, filters);
+      final var cnvMapper = new CnvMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getCopyNumberVariants() != null)
           .flatMap(item -> item.getResults().getCopyNumberVariants().stream())
           .forEach(item -> cnvMapper.addToBundle(bundle, item));
 
-      final var dnaFusionMapper = new DnaFusionMapper(referenceBuilder, filters);
+      final var dnaFusionMapper = new DnaFusionMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getDnaFusions() != null)
           .flatMap(item -> item.getResults().getDnaFusions().stream())
           .forEach(item -> dnaFusionMapper.addToBundle(bundle, item));
 
-      final var rnaFusionMapper = new RnaFusionMapper(referenceBuilder, filters);
+      final var rnaFusionMapper = new RnaFusionMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getRnaFusions() != null)
           .flatMap(item -> item.getResults().getRnaFusions().stream())
           .forEach(item -> rnaFusionMapper.addToBundle(bundle, item));
 
-      final var hrdScoreMapper = new HrdScoreMapper(referenceBuilder, filters);
+      final var hrdScoreMapper = new HrdScoreMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getHrdScore() != null)
           .map(item -> item.getResults().getHrdScore())
           .forEach(item -> hrdScoreMapper.addToBundle(bundle, item));
 
-      final var brcanessMapper = new BrcanessMapper(referenceBuilder, filters);
+      final var brcanessMapper = new BrcanessMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getBrcaness() != null)
           .map(item -> item.getResults().getBrcaness())
           .forEach(item -> brcanessMapper.addToBundle(bundle, item));
 
-      final var tmbMapper = new TmbMapper(referenceBuilder, filters);
+      final var tmbMapper = new TmbMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       ngsReports.stream()
           .filter(item -> item.getResults().getTmb() != null)
           .map(item -> item.getResults().getTmb())
@@ -200,7 +216,7 @@ public class PatientRecordMapper {
 
     final var msiFindings = patientRecord.getMsiFindings();
     if (null != msiFindings) {
-      final var msiMapper = new MsiMapper(referenceBuilder, filters);
+      final var msiMapper = new MsiMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       msiFindings.forEach(
           item -> {
             try {
@@ -215,9 +231,10 @@ public class PatientRecordMapper {
 
     final var ihcReports = patientRecord.getIhcReports();
     if (ihcReports != null) {
-      final var ihcMapper = new IhcMapper(referenceBuilder, filters);
+      final var ihcMapper = new IhcMapper(referenceBuilder, filters, fhirSystemBaseUrl);
       final var molekularPathologieBefundMapper =
-          new MolekularPathologieBefundMapper(referenceBuilder, ihcMapper, filters);
+          new MolekularPathologieBefundMapper(
+              referenceBuilder, ihcMapper, filters, fhirSystemBaseUrl);
 
       ihcReports.forEach(
           item -> {

@@ -28,8 +28,10 @@ import org.hl7.fhir.r4.model.Type;
 public abstract class DiagnosticReportMapper<S> extends DnpmToFhirMapper<S, DiagnosticReport> {
 
   protected DiagnosticReportMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   @Override

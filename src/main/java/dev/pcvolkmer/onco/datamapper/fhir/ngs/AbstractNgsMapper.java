@@ -31,8 +31,10 @@ import org.hl7.fhir.r4.model.Type;
 public abstract class AbstractNgsMapper<T> extends ObservationMapper<T> {
 
   protected AbstractNgsMapper(
-      ReferenceBuilder referenceBuilder, List<Filter<? extends Type>> filters) {
-    super(referenceBuilder, filters);
+      ReferenceBuilder referenceBuilder,
+      List<Filter<? extends Type>> filters,
+      String fhirSystemBaseUrl) {
+    super(referenceBuilder, filters, fhirSystemBaseUrl);
   }
 
   protected Coding mapChromosome(Chromosome chromosome) {
