@@ -603,6 +603,153 @@
       "url": "Observation/ec012fdbd508dd88c8b5571814d2452405cc3c4978e78f4fb4679dbd914f13fc"
     }
   }, {
+    "fullUrl": "Device/864448eb65c1275cd4ed7c89448938931b0f2a1012dcf5a28ef73871fc7cc0ce",
+    "resource": {
+      "resourceType": "Device",
+      "id": "864448eb65c1275cd4ed7c89448938931b0f2a1012dcf5a28ef73871fc7cc0ce",
+      "meta": {
+        "source": "https://fhir.diz.uk-test.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uk-test.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-device"
+      } ],
+      "deviceName": [ {
+        "name": "Sequencer",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/864448eb65c1275cd4ed7c89448938931b0f2a1012dcf5a28ef73871fc7cc0ce"
+    }
+  }, {
+    "fullUrl": "Device/e85a0519cf773bf371d19ee8a0b527ff73989e23f3372223def6d30a5cc0c6d7",
+    "resource": {
+      "resourceType": "Device",
+      "id": "e85a0519cf773bf371d19ee8a0b527ff73989e23f3372223def6d30a5cc0c6d7",
+      "meta": {
+        "source": "https://fhir.diz.uk-test.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uk-test.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-kit"
+      } ],
+      "manufacturer": "Manufacturer",
+      "deviceName": [ {
+        "name": "Kit Type",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/e85a0519cf773bf371d19ee8a0b527ff73989e23f3372223def6d30a5cc0c6d7"
+    }
+  }, {
+    "fullUrl": "Device/30eccfe227fa5783bc9eddcd0c270e6785e555e1aa4243cec8187032d29c688b",
+    "resource": {
+      "resourceType": "Device",
+      "id": "30eccfe227fa5783bc9eddcd0c270e6785e555e1aa4243cec8187032d29c688b",
+      "meta": {
+        "source": "https://fhir.diz.uk-test.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uk-test.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_pipeline"
+      } ],
+      "deviceName": [ {
+        "name": "https://github.com/pipeline-project",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/30eccfe227fa5783bc9eddcd0c270e6785e555e1aa4243cec8187032d29c688b"
+    }
+  }, {
+    "fullUrl": "Procedure/c653fa23bfee68872ca0cfe20a316b4e01d2a4f329a6f4b38771790ab365c097",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "c653fa23bfee68872ca0cfe20a316b4e01d2a4f329a6f4b38771790ab365c097",
+      "meta": {
+        "source": "https://fhir.diz.uk-test.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
+            "code": "whole-exom-sequencing",
+            "display": "Whole Exom Sequencing (WES)"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "LA26806-2",
+            "display": "GRCh38"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/864448eb65c1275cd4ed7c89448938931b0f2a1012dcf5a28ef73871fc7cc0ce"
+          }
+        }, {
+          "url": "function",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+              "code": "sequencing-device",
+              "display": "Sequenziergerät"
+            } ]
+          }
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/e85a0519cf773bf371d19ee8a0b527ff73989e23f3372223def6d30a5cc0c6d7"
+          }
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/30eccfe227fa5783bc9eddcd0c270e6785e555e1aa4243cec8187032d29c688b"
+          }
+        } ]
+      } ],
+      "identifier": [ {
+        "system": "https://fhir.diz.uk-test.de/sid/procedure-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsanalysis_0"
+      } ],
+      "status": "completed",
+      "category": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/4ae3de32b7374562d61eb7b9cb334e905713ec6ec8ad0cb221a5ca5b4fb822b7"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/c653fa23bfee68872ca0cfe20a316b4e01d2a4f329a6f4b38771790ab365c097"
+    }
+  }, {
     "fullUrl": "Observation/90e5579c89eafb55dfd727df01826b89c31a145fe733ada1bb3f37149c51a302",
     "resource": {
       "resourceType": "Observation",

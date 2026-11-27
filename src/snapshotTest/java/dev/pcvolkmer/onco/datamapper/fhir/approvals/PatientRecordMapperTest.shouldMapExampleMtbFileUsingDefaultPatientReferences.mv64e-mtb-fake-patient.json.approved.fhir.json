@@ -589,6 +589,149 @@
       "url": "Observation/11f61599-ac83-4135-82ae-671dc956bfb0_ecog"
     }
   }, {
+    "fullUrl": "urn:uuid:3149ed0b-ea4c-17fb-4a88-35a2caa1c60c",
+    "resource": {
+      "resourceType": "Device",
+      "meta": {
+        "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uni-marburg.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-device"
+      } ],
+      "deviceName": [ {
+        "name": "Sequencer",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-device"
+    }
+  }, {
+    "fullUrl": "urn:uuid:833e24ce-05d1-df4c-a20b-4ddff32db82b",
+    "resource": {
+      "resourceType": "Device",
+      "meta": {
+        "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uni-marburg.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-kit"
+      } ],
+      "manufacturer": "Manufacturer",
+      "deviceName": [ {
+        "name": "Kit Type",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-kit"
+    }
+  }, {
+    "fullUrl": "urn:uuid:810cd599-25e2-d5dc-6f41-19f92b5dd852",
+    "resource": {
+      "resourceType": "Device",
+      "meta": {
+        "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+      },
+      "identifier": [ {
+        "system": "https://fhir.diz.uni-marburg.de/sid/device-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_pipeline"
+      } ],
+      "deviceName": [ {
+        "name": "https://github.com/pipeline-project",
+        "type": "user-friendly-name"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_pipeline"
+    }
+  }, {
+    "fullUrl": "urn:uuid:90e5472e-692c-3247-d636-a7c36d32309b",
+    "resource": {
+      "resourceType": "Procedure",
+      "meta": {
+        "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
+        "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/mii-pr-mtb-genomic-study-analysis" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomic-analysis-method-type",
+            "code": "whole-exom-sequencing",
+            "display": "Whole Exom Sequencing (WES)"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build",
+        "valueCodeableConcept": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "LA26806-2",
+            "display": "GRCh38"
+          } ]
+        }
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-device"
+          }
+        }, {
+          "url": "function",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/CodeSystem/mii-cs-mtb-genomicanalysis-devicefunction",
+              "code": "sequencing-device",
+              "display": "Sequenziergerät"
+            } ]
+          }
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_sequencing-kit"
+          }
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-device",
+        "extension": [ {
+          "url": "device",
+          "valueReference": {
+            "reference": "Device/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_pipeline"
+          }
+        } ]
+      } ],
+      "identifier": [ {
+        "system": "https://fhir.diz.uni-marburg.de/sid/procedure-id",
+        "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsanalysis_0"
+      } ],
+      "status": "completed",
+      "category": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/4ba7adb6-ee5a-40d5-89fe-670cb6af86c6"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Procedure/f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsanalysis_0"
+    }
+  }, {
     "fullUrl": "urn:uuid:cc69d2c4-2bfd-5378-08a2-8f22225c4f9d",
     "resource": {
       "resourceType": "Observation",

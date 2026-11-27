@@ -155,6 +155,10 @@ public class PatientRecordMapper {
     final var ngsReports = patientRecord.getNgsReports();
     if (null != ngsReports) {
 
+      final var genomicStudyAnalysisMapper =
+          new GenomicStudyAnalysisMapper(referenceBuilder, filters);
+      ngsReports.forEach(item -> genomicStudyAnalysisMapper.addManyToBundle(bundle, item));
+
       final var einfacheVarianteMapper = new EinfacheVarianteMapper(referenceBuilder, filters);
       ngsReports.stream()
           .filter(item -> item.getResults().getSimpleVariants() != null)

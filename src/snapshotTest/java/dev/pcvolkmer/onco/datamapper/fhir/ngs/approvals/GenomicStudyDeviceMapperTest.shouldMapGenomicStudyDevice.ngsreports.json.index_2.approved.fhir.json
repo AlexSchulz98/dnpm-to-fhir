@@ -1,0 +1,15 @@
+{
+  "resourceType": "Device",
+  "meta": {
+    "source": "https://fhir.diz.uni-marburg.de/data-source/dnpm",
+    "profile": [ "https://www.medizininformatik-initiative.de/fhir/ext/modul-mtb/StructureDefinition/genomic-study-device" ]
+  },
+  "identifier": [ {
+    "system": "https://fhir.diz.uni-marburg.de/sid/device-id",
+    "value": "f98b924a-c7ad-4c23-8317-b3e65768a49b_ngsdevice_0_pipeline"
+  } ],
+  "deviceName": [ {
+    "name": "https://github.com/pipeline-project",
+    "type": "user-friendly-name"
+  } ]
+}
