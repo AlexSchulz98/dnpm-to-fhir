@@ -96,6 +96,8 @@ Implementiert ist:
 
 | FHIR-Profil                      | Status           | MII Förderkriterien |
 |----------------------------------|------------------|---------------------|
+| Genomic Study - Analysis         | ☔ (WIP)           | Verpflichtend (?)|
+| Genomic Study - Device           | ☔ (WIP)        |                     |
 | Variante - Einfache Variante     | ⛅               | Verpflichtend       |
 | Variante - Copy Number Variant   | ⛅               | Verpflichtend       |
 | Variante - DNA-Fusion            | ⛅               | Verpflichtend       |
